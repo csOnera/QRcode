@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="#00FFFFFF"
+    android:backgroundTint="#00FFFFFF"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/qrcodeimage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="sendData"
+            android:src="@drawable/qr_scan"
+            android:translationY="-100dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/cadmium_violet"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="10dp" />
+
+    <EditText
+        android:id="@+id/allResults"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:ems="10"
+        android:enabled="true"
+        android:hint="all results"
+        android:inputType="textMultiLine"
+        android:isScrollContainer="true"
+        android:maxLines="6"
+        android:minLines="6"
+        android:translationY="100dp"
+        android:textIsSelectable="true"
+        app:layout_anchor="@+id/qrcodeimage"
+        app:layout_anchorGravity="bottom|center"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/androidqrcodejava"
+        android:src="@drawable/qr_scan"
+        app:backgroundTint="@color/cadmium_violet"
+        app:layout_anchor="@+id/bottomAppBar"
+        app:layout_anchorGravity="top|center"
+        app:tint="@android:color/white" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendData"
+        android:text="SHARE"
+        app:layout_anchor="@+id/bottomAppBar"
+        app:layout_anchorGravity="start|center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
